@@ -1,0 +1,5 @@
+START: MOV R1 , #10 ; l o a d 10 i n t o R1
+ADD R2 , R1 ; R2 = R2 + R1
+SUB R3 , #5
+JMP START
+HALT

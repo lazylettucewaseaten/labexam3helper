@@ -1,0 +1,8 @@
+int main() {
+    int x,b;
+    int a;
+
+    if( a<b ){
+        x=x+1;
+    }
+}

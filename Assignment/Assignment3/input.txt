@@ -1,0 +1,20 @@
+void main () {
+    int i;
+    int k,x;
+    int  j;
+    if(i<j){
+    k=k+1;
+    }
+    int a;
+    int b;
+    if(a<b){
+    --x;
+    }
+    else{
+    x=x+1;
+    }
+
+    while(k<j){
+    x=x+1;
+    }
+}

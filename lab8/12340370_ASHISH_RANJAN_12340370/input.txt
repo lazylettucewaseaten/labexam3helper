@@ -1,0 +1,9 @@
+int p, q, r, s;
+float m, n, o;
+
+p = 4 * 3 + 7;
+q = (p - 5) * 3;
+
+r = p > q;
+m = n <= o;
+

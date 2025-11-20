@@ -1,0 +1,20 @@
+CSL302 Lab-5: Syntax Analysis
+Name: Ashish Ranjan
+ID: 12340370
+
+files:
+1. finalsub.l: lexical file
+2. finalsub.y: syntax analysis  file
+3. READEME.txt
+4. final executable file
+
+Important:
+Since div is a reserved we used DIV
+Written everything all three questions in the same file, for each quetion usage is strictly same as specifed by the question.
+
+
+How to Run:
+1. lex finalsub.l
+2. yacc -d finalsub.y
+3. gcc lex.yy.c y.tab.c -o final
+4. ./final

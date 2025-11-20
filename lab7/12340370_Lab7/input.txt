@@ -1,0 +1,6 @@
+
+START: MOV R1, #10 ; load r1 into this
+ADD R2, R1 ; R2 = R2+ R1
+SUB R3, #5
+JMP START
+HALT

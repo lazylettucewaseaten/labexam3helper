@@ -1,0 +1,29 @@
+// thank u for evaluting OUR  lexical code but this is a singhle line comment 
+// keywords 234 temp checking or anything else
+
+/* this is multi line  comment
+  project done by ashihs and arpit
+*/
+
+true false
+
+
+int ashish = ( temp + 34 ) ;
+
+double  bhomia = ( best thing + 45 ) / 7844 
+
+is this hex 0xFFEE 
+is this double  6.022E23
+ 
+ ()
+ 
+ { }
+
+exp2 = 1.6e-19 ;
+
+float [] something
+
+asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+empty
+
+} 
