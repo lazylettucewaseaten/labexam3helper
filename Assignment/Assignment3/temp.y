@@ -64,7 +64,7 @@ char* new_label(){
 %right UMINUS
 %right UNOT
 %type<str>OperatorExp OperatorOperand OperatorTerm   Expression ExpressionMain type AssignExp BooleanExp OptionalExp Statement
-%type<str>Lvalue  RelationalExp ConditionalStmt LoopStmt StmtBlock WhileStmt idlist  if_pref idlistarr whilestart whilecond
+%type<str>Lvalue  RelationalExp ConditionalStmt LoopStmt  WhileStmt idlist  if_pref idlistarr whilestart whilecond
 %nonassoc IF_WITHOUT_ELSE
 %nonassoc ELSE
 
@@ -73,7 +73,7 @@ char* new_label(){
 
 program : FuncMain ;
 
-FuncMain : VOID MAIN ROUNDLBRACKET ROUNDRBRACKET StmtBlock
+FuncMain : VOID MAIN ROUNDLBRACKET ROUNDRBRACKET  CURLYLBRACKET Stmts CURLYRBRACKET
 	
 
 VarDecl:
@@ -322,7 +322,6 @@ RelationalExp:
     ;
 
 
-StmtBlock: CURLYLBRACKET Stmts CURLYRBRACKET {};
 
 Stmts :   Statement Stmts |  VarDecl Stmts | ;
 
@@ -345,18 +344,18 @@ if_pref : IF ROUNDLBRACKET booleanExp ROUNDRBRACKET {
     
 }
 
-ConditionalStmt: if_pref Statement %prec IF_WITHOUT_ELSE     {
+ConditionalStmt: if_pref CURLYLBRACKET Statement CURLYRBRACKET %prec IF_WITHOUT_ELSE     {
    printf("%s :\n",$1);
 }
 
-| if_pref Statement ELSE{
+| if_pref CURLYLBRACKET Statement CURLYRBRACKET ELSE{
     char* ifexit=new_label();
-    printf("%s :\n",ifexit);
+    printf("goto %s :\n",ifexit);
     printf("%s :\n",$1);
     $<str>$=ifexit;
 
-} Statement    {
-    char *ifexit=$<str>4;
+} CURLYLBRACKET Statement CURLYRBRACKET {
+    char *ifexit=$<str>6;
     printf("%s :\n",ifexit);
 }
 ;
@@ -380,7 +379,7 @@ whilecond : ROUNDLBRACKET booleanExp ROUNDRBRACKET {
     $$=condfalse;
 }
 
-WhileStmt: whilestart whilecond Statement {
+WhileStmt: whilestart whilecond CURLYLBRACKET Statement CURLYRBRACKET {
    printf("goto %s\n",$1);
    printf("%s : \n",$2);
 };
